@@ -17,13 +17,17 @@ export default createGlobalStyle`
 
   /* #balloon {
     display: none;
+    transition: all 0.7s;
+
   }
 
   #profileimg:hover + #balloon {
-    border: solid green 5px;
     display: flex;
-    top: 500px;
   } */
 
-
+  /* @keyframe OptionAnimation {
+    10% { opacity: 0; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+  } */
 `

@@ -41,29 +41,6 @@ export const Notification = styled.div`
 `
 
 
-export const ItensBalloon = styled.div`
-  background: transparent;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 100%;
-  height: 40px;
-  border-radius: 8px;
-  :hover {
-    background: ${ props => props.theme.colors.background };
-  }
-`
-
-export const ProfileImage = styled.img`
-  width: 40px;
-  height: 40px;
-  filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.25));
-  border-radius: 8px;
-  border: solid 1px black;
-`
-
-
-
 export const BalloonContainer = styled.div`
   width: 200px;
   background-color: ${ props => props.theme.colors.foreground };
@@ -75,8 +52,56 @@ export const BalloonContainer = styled.div`
   right: 10px;
   border-radius: 8px;
 
-  :hover ~ ${ProfilePart} {
+
+  @keyframes OptionAnimation {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  animation-name: OptionAnimation;
+  animation-duration: 0.6s;
+
+  :hover {
     display: flex;
   }
 
+
+
 `;
+
+export const ItensBalloon = styled.div`
+  background: transparent;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  border-radius: 8px;
+  cursor: pointer;
+  :hover {
+    background: ${ props => props.theme.colors.background };
+  }
+  color: ${ props => props.theme.colors.primary };
+  span {
+    letter-spacing: 1px;
+    padding-left: 15px;
+    margin-right: 15px;
+  }
+`
+
+export const ProfileImage = styled.img`
+  width: 40px;
+  height: 40px;
+  filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.25));
+  border-radius: 8px;
+  border: solid 1px black;
+  margin-right: 35px;
+  cursor: pointer;
+
+  :hover + ${BalloonContainer} {
+    display: flex;
+  }
+
+`
+
+
